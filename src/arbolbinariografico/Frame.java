@@ -11,8 +11,10 @@ public class Frame extends javax.swing.JFrame {
      * Creates new form Frame
      */
     ArbolBin ab = new ArbolBin();
+    ArbolBin abOriginal = new ArbolBin();
     public Frame() {
         initComponents();
+        this.setTitle("Estuardo Lopez 9941-18-10946");
     }
 
     /**
@@ -35,6 +37,7 @@ public class Frame extends javax.swing.JFrame {
         btnpostorden = new javax.swing.JButton();
         btnnivel = new javax.swing.JButton();
         btnbuscar = new javax.swing.JButton();
+        btnArbolOriginal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Programación III");
@@ -68,28 +71,28 @@ public class Frame extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        btneliminar.setText("Eliminar Datos");
+        btneliminar.setText("Limpiar Arbol");
         btneliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btneliminarActionPerformed(evt);
             }
         });
 
-        btnpreorden.setText("Preorden");
+        btnpreorden.setText("Pre-Orden");
         btnpreorden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnpreordenActionPerformed(evt);
             }
         });
 
-        btninorden.setText("Inorden");
+        btninorden.setText("In-Orden");
         btninorden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btninordenActionPerformed(evt);
             }
         });
 
-        btnpostorden.setText("Postorden");
+        btnpostorden.setText("Post-Orden");
         btnpostorden.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnpostordenActionPerformed(evt);
@@ -110,6 +113,13 @@ public class Frame extends javax.swing.JFrame {
             }
         });
 
+        btnArbolOriginal.setText("Regresar al Arbol Original");
+        btnArbolOriginal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArbolOriginalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,35 +127,41 @@ public class Frame extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtdato)
-                    .addComponent(btninsertar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnpreorden)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnpostorden)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btninorden, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnnivel, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtdato)
+                            .addComponent(btninsertar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(54, 54, 54)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnpreorden)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnpostorden)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btninorden, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnnivel, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btneliminar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnbuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btneliminar)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnArbolOriginal, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 532, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtdato, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnpreorden)
@@ -157,11 +173,12 @@ public class Frame extends javax.swing.JFrame {
                             .addComponent(btninsertar)
                             .addComponent(btnbuscar)
                             .addComponent(btneliminar))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnArbolOriginal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         pack();
@@ -172,6 +189,7 @@ public class Frame extends javax.swing.JFrame {
             int dato = Integer.parseInt(txtdato.getText());
             txtdato.setText("");
             ab.insertar(dato);
+            abOriginal.insertar(dato);
             paint(jPanel2.getGraphics());
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(this, "Error al Insertar el Dato");
@@ -184,6 +202,7 @@ public class Frame extends javax.swing.JFrame {
             int dato = Integer.parseInt(txtdato.getText());
             txtdato.setText("");
             ab.insertar(dato);
+            abOriginal.insertar(dato);
             paint(jPanel2.getGraphics());
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(this, "Error al Insertar el Dato");
@@ -193,6 +212,8 @@ public class Frame extends javax.swing.JFrame {
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
         ab = null;
         ab = new ArbolBin();
+        abOriginal = null;
+        abOriginal = new ArbolBin();
         paint(jPanel2.getGraphics());
     }//GEN-LAST:event_btneliminarActionPerformed
 
@@ -204,7 +225,7 @@ public class Frame extends javax.swing.JFrame {
         ab = null;
         ab = new ArbolBin();
         for (Object rec1 : rec) {
-        	int n = ((Integer) rec1).intValue();
+            int n = ((Integer) rec1).intValue();
             ab.insertar(n);
             paint(jPanel2.getGraphics());
             cad += rec1 + "  ";
@@ -213,11 +234,17 @@ public class Frame extends javax.swing.JFrame {
         jTextArea1.setText(cad);
     }//GEN-LAST:event_btnpreordenActionPerformed
 
+    //BOTON IN-ORDEN
     private void btninordenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninordenActionPerformed
         LinkedList rec = new LinkedList();
         ab.inorden(ab.getRaiz(), rec);
         String cad = "Recorrido Inorden:\n";
+        ab = null;
+        ab = new ArbolBin();
         for (Object rec1 : rec) {
+        	int n = ((Integer) rec1).intValue();
+            ab.insertar(n);
+            paint(jPanel2.getGraphics());
             cad += rec1 + "  ";
         }
         jTextArea1.setText(cad);
@@ -231,7 +258,7 @@ public class Frame extends javax.swing.JFrame {
         ab = null;
         ab = new ArbolBin();
         for (Object rec1 : rec) {
-        	int n = ((Integer) rec1).intValue();
+            int n = ((Integer) rec1).intValue();
             ab.insertar(n);
             paint(jPanel2.getGraphics());
             cad += rec1 + "  ";
@@ -239,11 +266,17 @@ public class Frame extends javax.swing.JFrame {
         jTextArea1.setText(cad);
     }//GEN-LAST:event_btnpostordenActionPerformed
 
+    //BOTON POR NIVEL
     private void btnnivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnivelActionPerformed
         LinkedList rec = new LinkedList();
         ab.porNivel(ab.getRaiz(), rec);
         String cad = "Recorrido Por Nivel:\n";
+        ab = null;
+        ab = new ArbolBin();
         for (Object rec1 : rec) {
+            int n = ((Integer) rec1).intValue();
+            ab.insertar(n);
+            paint(jPanel2.getGraphics());
             cad += rec1 + "  ";
         }
         jTextArea1.setText(cad);
@@ -258,6 +291,27 @@ public class Frame extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnbuscarActionPerformed
+
+    //BOTON OBTENER EL ARBOL ORIGINAL
+    private void btnArbolOriginalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArbolOriginalActionPerformed
+        // TODO add your handling code here:
+        try {
+            LinkedList rec = new LinkedList();
+        abOriginal.porNivel(abOriginal.getRaiz(), rec);
+        String cad = "Arbol Original: \n";
+        ab = null;
+        ab = new ArbolBin();
+        for (Object rec1 : rec) {
+            int n = ((Integer) rec1).intValue();
+            ab.insertar(n);
+            paintOg(jPanel2.getGraphics());
+            cad += rec1 + "  ";
+        }
+        jTextArea1.setText(cad);
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(this, "Error");
+        }
+    }//GEN-LAST:event_btnArbolOriginalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,6 +350,7 @@ public class Frame extends javax.swing.JFrame {
     
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnArbolOriginal;
     private javax.swing.JButton btnbuscar;
     private javax.swing.JButton btneliminar;
     private javax.swing.JButton btninorden;
@@ -337,6 +392,15 @@ private void pintaArbol(Graphics g, Nodo n, int x, int y,int xoff,int yoff,int n
         int X2 = (getWidth()/12);
         int Y = getHeight()/12;
         pintaArbol(jPanel2.getGraphics(), ab.getRaiz(), jPanel2.getWidth()/2, Y, X2, Y,1);
+        
+    }
+    public void paintOg(Graphics g){
+        jPanel2.revalidate();
+        super.paint(g);
+        int X = (getWidth()/5)*abOriginal.getAltura();
+        int X2 = (getWidth()/12);
+        int Y = getHeight()/12;
+        pintaArbol(jPanel2.getGraphics(), abOriginal.getRaiz(), jPanel2.getWidth()/2, Y, X2, Y,1);
         
     }
     

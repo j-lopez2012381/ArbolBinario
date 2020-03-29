@@ -28,30 +28,39 @@
           <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="txtdato" max="32767" attributes="0"/>
-                  <Component id="btninsertar" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="btnpreorden" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnpostorden" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btninorden" min="-2" pref="77" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnnivel" min="-2" pref="81" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="txtdato" max="32767" attributes="0"/>
+                          <Component id="btninsertar" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnpreorden" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnpostorden" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btninorden" pref="89" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnnivel" min="-2" pref="85" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Component id="btnbuscar" min="-2" pref="112" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btneliminar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="btnbuscar" min="-2" pref="99" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btneliminar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="btnArbolOriginal" min="-2" pref="214" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="552" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="532" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -60,9 +69,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="txtdato" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="btnpreorden" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -76,14 +85,15 @@
                           <Component id="btnbuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btneliminar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnArbolOriginal" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="17" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -134,7 +144,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="btneliminar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Eliminar Datos"/>
+        <Property name="text" type="java.lang.String" value="Limpiar Arbol"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btneliminarActionPerformed"/>
@@ -142,7 +152,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnpreorden">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Preorden"/>
+        <Property name="text" type="java.lang.String" value="Pre-Orden"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnpreordenActionPerformed"/>
@@ -150,7 +160,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btninorden">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Inorden"/>
+        <Property name="text" type="java.lang.String" value="In-Orden"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btninordenActionPerformed"/>
@@ -158,7 +168,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnpostorden">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Postorden"/>
+        <Property name="text" type="java.lang.String" value="Post-Orden"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnpostordenActionPerformed"/>
@@ -178,6 +188,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnbuscarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnArbolOriginal">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Regresar al Arbol Original"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnArbolOriginalActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

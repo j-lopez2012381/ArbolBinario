@@ -16,6 +16,8 @@ public class ArbolBinarioGrafico {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Frame UI = new Frame();
+        UI.setVisible(true);
     }
     
 }
