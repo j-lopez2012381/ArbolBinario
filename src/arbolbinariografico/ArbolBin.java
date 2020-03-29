@@ -113,5 +113,17 @@ public class ArbolBin {
         return false;
     }
     
+    private void altura (Nodo aux, int nivel){
+        if(aux != null){
+            altura(aux.getIzq(), nivel+1);
+            alt=nivel;
+            altura(aux.getDer(), nivel+1);
+            
+        }
+    }
     
+    public int getAltura(){
+        altura(raiz,1);
+        return alt; 
+    }
 }
